@@ -1,0 +1,1 @@
+{"name":"cuoti-record","version":"0.3.2","private":true,"scripts":{"test:browser":"node scripts/browser-qa.cjs"},"devDependencies":{"playwright":"1.58.2"}}

@@ -1,0 +1,5 @@
+# v0.1.1 技术方案
+
+迁移2新增pages.subject/content_kind/recognition_version；pages.text保存OCR文字。识别返回页面结构，不把空题目数组当异常。数学分析前校验来源页学科，非数学返回明确错误。保留旧recognize二元返回兼容模拟测试。前端状态及核对页显示页面结果，预览内展示文字；成功讲义页不重试。
+
+状态successful由可信结构化结果决定：非空text或questions，再校验content_kind；unreadable仍失败。notes空题列表允许成功并持久化。接口超时单独提示，与内容清晰度区分。旧成功页recognition_version为空时补读元信息，但不再次插题。分析前阻止旧未分类页和明确非数学页误用数学库。首次真实复测超时记录见验收文档。

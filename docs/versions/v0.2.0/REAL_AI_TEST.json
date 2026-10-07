@@ -1,0 +1,54 @@
+{
+  "constructed_question": {
+    "stem": "Fill in the blank: She enjoys ___ (read) books.",
+    "work": "read",
+    "missing": false
+  },
+  "analysis": {
+    "answer": "先找谓语动词：She enjoys ___ books。enjoy 表示“喜欢做某事”时，后面通常接动名词作宾语，即 enjoy doing sth.，不能用动词原形。因此 read 要变成 reading。答案：reading。完整句：She enjoys reading books.",
+    "correct_parts": "无明显已做对部分；作答只写出了题干给出的 read，未给出所需形式。",
+    "issues": "孩子把 enjoy 后的动词仍写成原形 read，没有变成动名词 reading，说明没有掌握 enjoy doing sth. 这一结构。",
+    "evidence": "read",
+    "check_action": "下次看到 enjoy、finish、mind、keep 等后接动作的空，先检查是否要用 doing；可代入 She enjoys reading books 读一遍。",
+    "uncertainty": "",
+    "knowledge_ids": [
+      "en_nonfinite",
+      "en_collocation"
+    ],
+    "causes": [
+      "语法"
+    ],
+    "model": "qwen3.8-max",
+    "prompt_version": "english-evidence-1",
+    "knowledge_version": "english-core-1",
+    "proposal": {
+      "answer": "先找谓语动词：She enjoys ___ books。enjoy 表示“喜欢做某事”时，后面通常接动名词作宾语，即 enjoy doing sth.，不能用动词原形。因此 read 要变成 reading。答案：reading。完整句：She enjoys reading books.",
+      "correct_parts": "无明显已做对部分；作答只写出了题干给出的 read，未给出所需形式。",
+      "issues": "孩子把 enjoy 后的动词仍写成原形 read，没有变成动名词 reading，说明没有掌握 enjoy doing sth. 这一结构。",
+      "evidence": "read",
+      "check_action": "下次看到 enjoy、finish、mind、keep 等后接动作的空，先检查是否要用 doing；可代入 She enjoys reading books 读一遍。",
+      "causes": [
+        "语法"
+      ],
+      "knowledge_ids": [
+        "en_nonfinite",
+        "en_collocation"
+      ],
+      "uncertainty": ""
+    },
+    "usage": {
+      "completion_tokens": 1025,
+      "completion_tokens_details": {
+        "reasoning_tokens": 794,
+        "text_tokens": 1025
+      },
+      "prompt_tokens": 926,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "text_tokens": 926
+      },
+      "total_tokens": 1951
+    },
+    "elapsed": 32.5
+  }
+}

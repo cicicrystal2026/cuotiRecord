@@ -1,0 +1,142 @@
+{
+  "tested_at": "2026-10-07T14:12:03.809064+00:00",
+  "models": {
+    "base_url": "https://dashscope.aliyuncs.com/compatible-mode/v1",
+    "vision_model": "qwen3-vl-plus",
+    "analysis_model": "qwen3.8-max",
+    "configured": true,
+    "environment_key": false
+  },
+  "fixture": "tests/fixtures/math-work.jpg",
+  "synthetic_fixture": true,
+  "cases": [
+    {
+      "case": "wrong-work",
+      "question": {
+        "label": "第1题",
+        "stem": "求 f(x) = x² 在 [-2, 1] 上的单调区间。",
+        "work": "函数在整个区间始终递增。",
+        "missing": false,
+        "warning": "老师批注：注意 x=0 两侧的变化。"
+      },
+      "analysis": {
+        "answer": "f(x)=x² 是开口向上、对称轴为 x=0 的二次函数。区间 [-2,1] 跨越对称轴，必须分段讨论：在 [-2,0] 上，任取 x1<x2≤0 有 f(x1)>f(x2)（如 f(-2)=4>f(-1)=1>f(0)=0），故单调递减；在 [0,1] 上，任取 0≤x1<x2 有 f(x1)<f(x2)（如 f(0)=0<f(1)=1），故单调递增。结论：单调递减区间为 [-2,0]，单调递增区间为 [0,1]。",
+        "correct_parts": "知道要在给定区间 [-2,1] 上判断单调性；其中关于 0 右侧（[0,1] 段）递增的隐含判断与事实相符，但作答未分段表述。",
+        "issues": "第一处实质问题：断言函数在整个 [-2,1] 上始终递增，忽略了对称轴 x=0 左侧函数递减的事实（f(-2)=4>f(0)=0 即为反例）。原因：未结合二次函数图像以对称轴为界分段讨论单调性，把局部递增误推广到全区间。修正动作：先求对称轴 x=0，确认区间跨越对称轴后分段，写出递减区间 [-2,0] 与递增区间 [0,1]。",
+        "evidence": "函数在整个区间始终递增",
+        "check_action": "下次先求二次函数对称轴，检查所给区间是否跨越对称轴；若跨越，则在对称轴两侧各取两点比较函数值（如 f(-2)=4 与 f(0)=0）验证增减方向，再分段写出单调区间，避免一口断定全区间单调。",
+        "uncertainty": "",
+        "knowledge_ids": [
+          "monotonicity",
+          "quadratic"
+        ],
+        "causes": [
+          "概念"
+        ],
+        "model": "qwen3.8-max",
+        "prompt_version": "math-evidence-1",
+        "knowledge_version": "math-core-1",
+        "proposal": {
+          "answer": "f(x)=x² 是开口向上、对称轴为 x=0 的二次函数。区间 [-2,1] 跨越对称轴，必须分段讨论：在 [-2,0] 上，任取 x1<x2≤0 有 f(x1)>f(x2)（如 f(-2)=4>f(-1)=1>f(0)=0），故单调递减；在 [0,1] 上，任取 0≤x1<x2 有 f(x1)<f(x2)（如 f(0)=0<f(1)=1），故单调递增。结论：单调递减区间为 [-2,0]，单调递增区间为 [0,1]。",
+          "correct_parts": "知道要在给定区间 [-2,1] 上判断单调性；其中关于 0 右侧（[0,1] 段）递增的隐含判断与事实相符，但作答未分段表述。",
+          "issues": "第一处实质问题：断言函数在整个 [-2,1] 上始终递增，忽略了对称轴 x=0 左侧函数递减的事实（f(-2)=4>f(0)=0 即为反例）。原因：未结合二次函数图像以对称轴为界分段讨论单调性，把局部递增误推广到全区间。修正动作：先求对称轴 x=0，确认区间跨越对称轴后分段，写出递减区间 [-2,0] 与递增区间 [0,1]。",
+          "evidence": "函数在整个区间始终递增",
+          "check_action": "下次先求二次函数对称轴，检查所给区间是否跨越对称轴；若跨越，则在对称轴两侧各取两点比较函数值（如 f(-2)=4 与 f(0)=0）验证增减方向，再分段写出单调区间，避免一口断定全区间单调。",
+          "causes": [
+            "概念"
+          ],
+          "knowledge_ids": [
+            "monotonicity",
+            "quadratic"
+          ],
+          "uncertainty": ""
+        },
+        "usage": {
+          "completion_tokens": 1690,
+          "completion_tokens_details": {
+            "reasoning_tokens": 1226,
+            "text_tokens": 463
+          },
+          "prompt_tokens": 1704,
+          "prompt_tokens_details": {
+            "cached_tokens": 1152,
+            "image_tokens": 1056,
+            "text_tokens": 648
+          },
+          "total_tokens": 3394
+        },
+        "elapsed": 49.85
+      }
+    },
+    {
+      "case": "missing-work",
+      "question": {
+        "stem": "计算1+1。",
+        "work": "",
+        "missing": true
+      },
+      "analysis": {
+        "answer": "1+1=2。",
+        "correct_parts": "",
+        "issues": "",
+        "evidence": "",
+        "check_action": "先补充实际作答，再判断个人错因。",
+        "uncertainty": "缺少孩子作答，仅提供考点和解法建议。",
+        "knowledge_ids": [],
+        "causes": [],
+        "model": "qwen3.8-max",
+        "prompt_version": "math-evidence-1",
+        "knowledge_version": "math-core-1",
+        "proposal": {
+          "answer": "1+1=2。",
+          "correct_parts": "未提供作答，无法判断已做对部分。",
+          "issues": "未提供作答，无法分析个人错因；本题为基本加法运算，考点库范围不足，未匹配知识点。",
+          "evidence": "",
+          "check_action": "补充作答后再检查是否将加号误看，并确认结果为2。",
+          "causes": [
+            "暂不确定"
+          ],
+          "knowledge_ids": [],
+          "uncertainty": ""
+        },
+        "usage": {
+          "completion_tokens": 441,
+          "completion_tokens_details": {
+            "reasoning_tokens": 348,
+            "text_tokens": 441
+          },
+          "prompt_tokens": 668,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "text_tokens": 668
+          },
+          "total_tokens": 1109
+        },
+        "elapsed": 15.37
+      }
+    }
+  ],
+  "recognition": {
+    "questions": [
+      {
+        "label": "第1题",
+        "stem": "求 f(x) = x² 在 [-2, 1] 上的单调区间。",
+        "work": "函数在整个区间始终递增。",
+        "missing": false,
+        "warning": "老师批注：注意 x=0 两侧的变化。"
+      }
+    ],
+    "warning": ""
+  },
+  "passed": true,
+  "connection_tests": {
+    "qwen3-vl-plus": "passed",
+    "qwen3.8-max": "passed"
+  },
+  "observed_failure": {
+    "case": "missing-work with original image",
+    "outcome": "120-second timeout on first run",
+    "retest": "simpler text-only missing-work passed"
+  },
+  "manual_math_check": "Quadratic monotonicity answer verified: decreasing [-2,0], increasing [0,1]."
+}

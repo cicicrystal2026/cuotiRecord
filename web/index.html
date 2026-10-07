@@ -1,0 +1,11 @@
+<!doctype html>
+<html lang="zh-CN">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>知错 · 学期学习档案</title><link rel="stylesheet" href="/static/style.css"><script type="module" src="/static/app.js"></script></head>
+<body>
+<div class="app-shell">
+ <aside class="sidebar"><a class="brand" href="#/home"><span class="brand-mark">知</span><span>知错<small>学期学习档案</small></span></a><nav aria-label="主导航"><a href="#/home" data-nav="home">选择学科<span>今天从一件小事开始</span></a><a href="#/upload" data-nav="upload">录入资料<span>图片 · PDF · Word</span></a><a href="#/history" data-nav="history">学习历史<span>按时间回看</span></a><a href="#/knowledge" data-nav="knowledge">我的考点<span>看见问题与进步</span></a><a href="#/plan" data-nav="plan">原题复习<span>先做题，再看答案</span></a></nav><div class="sidebar-bottom"><a href="#/settings">设置与模型连接 <span>↗</span></a><p>v0.3.2 · 本地学习档案</p></div></aside>
+ <div class="workspace"><header class="topbar"><div class="mobile-brand">知错</div><span id="semester-label">正在读取学习档案</span><a id="connection-label" href="#/settings" class="connection">模型配置</a></header><main id="main" aria-live="polite"><div class="loading">正在打开学习档案…</div></main><footer>记录帮助你看清下一步。已记录考点不代表全部学习内容。</footer></div>
+</div>
+<div id="toast" role="status" hidden></div>
+<dialog id="confirm-dialog"><form method="dialog"><h2 id="confirm-title">确认操作</h2><p id="confirm-message"></p><div class="actions"><button value="cancel" class="button secondary">取消</button><button value="confirm" class="button danger">确认</button></div></form></dialog>
+</body></html>
