@@ -4,7 +4,7 @@
 
 FastAPI 提供本机 HTTP API，原生 JavaScript/CSS 单页前端，SQLite 持久化。默认绑定 127.0.0.1:8765。资料、分页、题目、分析、考点关系、后台任务、复习会话与尝试分表保存；迁移版本截至 4，新增发行版不删除既有数据。
 
-`app/main.py`：接口、校验与本机请求约束；`db.py`：数据与迁移；`documents.py`：图片/PDF/DOCX 转换；`ai.py`：百炼兼容 API、输出规范化与证据约束；`domain.py`：分析有效性、考点统计与复习规则；`config.py`：本地 DPAPI 密钥；`subjects.py` 与 `knowledge.py`：学科与英语考点；`web/`：页面。
+`app/main.py`：接口、校验与本机请求约束；`storage.py`：数据与迁移；`documents.py`：图片/PDF/DOCX 转换；`ai.py`：百炼兼容 API、输出规范化与证据约束；`domain.py`：分析有效性、考点统计与复习规则；`config.py`：本地 DPAPI 密钥；`subjects.py` 与 `knowledge.py`：学科与英语考点；`web/`：页面。
 
 图片使用 Pillow；PDF 使用 PyMuPDF；DOCX 用 lxml 解析文字、OMML 公式与内嵌图，经 Playwright 重排成 PDF。重排预览保留内容，不保证 Word 原版排版。Node 依赖依次查找显式 CUOTI_NODE_MODULES、本机安装、项目 node_modules 与可用运行时。浏览器支持 Chrome/Edge 或已安装的 Playwright Chromium。
 
